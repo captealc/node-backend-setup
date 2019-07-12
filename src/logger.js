@@ -42,7 +42,7 @@ const stream = winstonLogger.stream
 function formatLogArguments (args) {
   args = Array.prototype.slice.call(args)
 
-  var stackInfo = getStackInfo(1)
+  const stackInfo = getStackInfo(1)
 
   if (stackInfo) {
     const calleeStr =
