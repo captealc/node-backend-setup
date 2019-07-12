@@ -5,9 +5,9 @@
   "scripts": {
     "prettier": "prettier --write src/**/*.{js,css}",
     "lint": "eslint src",
-    "build": "eslint src && webpack",
+    "build": "npm run lint && webpack",
     "run": "node -r source-map-support/register dist/index.js",
-    "buildAndRun": "webpack && node -r source-map-support/register dist/index.js"
+    "buildAndRun": "npm run build && npm run run"
   },
   "husky": {
     "hooks": {
