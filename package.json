@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {},
   "dependencies": {
-    "source-map-support": "^0.5.12"
+    "source-map-support": "^0.5.12",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",

@@ -1,3 +1,8 @@
 import {sayHello} from './hello'
+import {logger} from './logger'
 
-sayHello()
+try {
+  sayHello()
+} catch (e) {
+  logger.error(e)
+}
