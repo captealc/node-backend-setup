@@ -3,19 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "precommit": "prettier-standard --write 'src/**/*.js'",
+    "pretty": "prettier --write \"src/**/*.js\"",
+    "precommit": "lint-staged",
     "lint": "eslint src",
     "build": "eslint src && webpack",
     "run": "node -r source-map-support/register dist/index.js",
     "buildAndRun": "webpack && node -r source-map-support/register dist/index.js"
   },
   "lint-staged": {
-    "linters": {
-      "src/**/*.js": [
-        "prettier-standard --write",
-        "git add"
-      ]
-    }
+    "*.js": [
+      "npm run pretty",
+      "git add"
+    ]
   },
   "dependencies": {
     "source-map-support": "^0.5.12",
@@ -35,10 +34,11 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "husky": "^3.0.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2",
     "prettier-standard": "^9.1.1",
     "regenerator-runtime": "^0.13.2",
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5",
-    "lint-staged": "^9.2.0"
+    "webpack-cli": "^3.3.5"
   }
 }
