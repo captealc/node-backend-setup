@@ -26,7 +26,7 @@ const logger = winston.createLogger({
     winston.format.printf(info => {
       return `[${
         info.timestamp
-      }][${info.level.toUpperCase()}]: [${getLocation()}] ${info.stack ||
+      }][${getLocation()}][${info.level.toUpperCase()}]:  ${info.stack ||
         info.message}`
     })
   ),
