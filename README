@@ -1,0 +1,6 @@
+# Running in Webstorm/Intellij
+
+Reuse shared run configuration commited to VCS, change the paths if necessary
+
+# Running with stacktraces on prod
+webpack && node -r source-map-support/register dist/index.js
