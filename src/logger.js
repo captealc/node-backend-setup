@@ -37,7 +37,7 @@ const error = function () {
   winstonLogger.error.apply(winstonLogger, formatLogArguments(arguments))
 }
 
-module.exports.stream = winstonLogger.stream
+const stream = winstonLogger.stream
 
 function formatLogArguments (args) {
   args = Array.prototype.slice.call(args)
@@ -81,7 +81,8 @@ const logger = {
   error,
   info,
   debug,
-  warn
+  warn,
+  stream
 }
 
 export { logger }
