@@ -4,13 +4,12 @@ const logger = winston.createLogger({
   level: 'debug',
   format: winston.format.combine(
     winston.format.timestamp(),
-    winston.format.printf((info) => {
-      return `[${info.timestamp}][${info.level.toUpperCase()}]: ${info.stack || info.message}`
+    winston.format.printf(info => {
+      return `[${info.timestamp}][${info.level.toUpperCase()}]: ${info.stack ||
+        info.message}`
     })
   ),
-  transports: [
-    new winston.transports.Console({})
-  ]
+  transports: [new winston.transports.Console({})]
 })
 
 export { logger }
