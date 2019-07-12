@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "pretty": "prettier-standard --write \"src/**/*.js\"",
-    "precommit": "lint-staged",
+    "pretty": "prettier-standard --write src/**/*.js",
     "lint": "eslint src",
     "build": "eslint src && webpack",
     "run": "node -r source-map-support/register dist/index.js",
