@@ -6,6 +6,7 @@ const sayHello = async () => {
   const writeFileAsync = promisify(fs.writeFile)
   await writeFileAsync('/tmp/test', 'elllo')
   logger.info('Hello')
+  throw Error('ASD')
 }
 
 export { sayHello }
