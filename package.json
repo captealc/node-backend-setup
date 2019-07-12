@@ -2,7 +2,12 @@
   "name": "express",
   "version": "0.0.0",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint src",
+    "build": "eslint src && webpack",
+    "run": "node -r source-map-support/register dist/index.js",
+    "buildAndRun": "webpack && node -r source-map-support/register dist/index.js"
+  },
   "dependencies": {
     "source-map-support": "^0.5.12",
     "winston": "^3.2.1"
