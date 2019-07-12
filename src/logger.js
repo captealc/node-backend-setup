@@ -45,7 +45,12 @@ function formatLogArguments (args) {
   var stackInfo = getStackInfo(1)
 
   if (stackInfo) {
-    const calleeStr = '(' + stackInfo.relativePath + ':' + stackInfo.line + ')'
+    const calleeStr =
+      '(src' +
+      stackInfo.relativePath.split('src')[1] +
+      ':' +
+      stackInfo.line +
+      ')'
 
     if (typeof args[0] === 'string') {
       args[0] = calleeStr + ' ' + args[0]
