@@ -3,15 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "format": "prettier-standard 'src/**/*.js'",
+    "precommit": "prettier-standard 'src/**/*.js'",
     "lint": "eslint src",
     "build": "eslint src && webpack",
     "run": "node -r source-map-support/register dist/index.js",
     "buildAndRun": "webpack && node -r source-map-support/register dist/index.js"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format "
+  "lint-staged": {
+    "linters": {
+      "src/**/*.js": [
+        "prettier-standard",
+        "git add"
+      ]
     }
   },
   "dependencies": {
@@ -35,6 +38,7 @@
     "prettier-standard": "^9.1.1",
     "regenerator-runtime": "^0.13.2",
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.5",
+    "lint-staged": "^9.2.0"
   }
 }
