@@ -3,15 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "pretty": "prettier-standard --write src/**/*.js",
+    "precommit": "lint-staged",
     "lint": "eslint src",
     "build": "eslint src && webpack",
     "run": "node -r source-map-support/register dist/index.js",
     "buildAndRun": "webpack && node -r source-map-support/register dist/index.js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit",
+      "...": "..."
+    }
+  },
   "lint-staged": {
     "*.js": [
-      "npm run pretty",
+      "prettier-standard --write src/**/*.js",
       "git add"
     ]
   },
