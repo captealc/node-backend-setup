@@ -1,5 +1,7 @@
+import {logger} from './logger'
+
 const sayHello = () => {
-  console.log('Hello')
+  logger.info("Hello")
 }
 
 export {sayHello}
