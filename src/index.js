@@ -1,8 +1,12 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import {sayHello} from './hello'
 import {logger} from './logger'
 
-try {
-  sayHello()
-} catch (e) {
-  logger.error(e)
-}
+(async () => {
+  try {
+    await sayHello()
+  } catch (e) {
+    logger.error(e)
+  }
+})()
